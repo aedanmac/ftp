@@ -1,10 +1,18 @@
 language: ruby
 rvm:
-  - 2.0.0-p481
+- 2.0.0-p481
 branches:
   only:
-    - master
+  - master
 install:
-  - "travis_retry bundle install"
+- travis_retry bundle install
 before_script:
-  - psql -c 'create database ftp_test;' -U postgres
+- psql -c 'create database ftp_test;' -U postgres
+deploy:
+  api_key:
+  	provider: heroku
+    secure: cWJ/Ip+Mt6h+avC2tpTkbGQVG5w//ofx09hwPCSA3ob116/z56wOc0qyU4aIVrk31OiaQB/LYijx6e38ef4mwjjwKgsPRZvR1+d/IcG0aT1jbSXpOlVs6exFs3in6okrIxqLapnrOGQEs4QYosbHJB5FJOg7Rk1d3PPpJosxtndwjWVklPVUOlLdWy88pPDB4XZpKcmvOrNTwlH0wREgAyQtcSU2WBSIrVEX1eFW5UIEUh+uBfS/YFlQjIV2GtVYuLihKsPSMAZToW+opE3aVZNj7tgA+3azQv1gtXBn21xfMRYZQYVlwifDIKcdPf068rwKuAttRfg6Fq/+5VAeNn9TCrYwEgBa4L0f0ECSHHqiQ0HivcSbzs0E+UAi0EDf9Pq8TliOscmVjxeWQpbgOjlYfYU8y2FVEN/tlHpcIeKB8TzuVECikF7TqVoAeFQIGtuHDnn3+cuPHurUrUhWAjU/Zx49661JLt4M275+oE69bPQMcH/IAq25pxXD5ETHzPXydrEb4Xr73QUI9nQTw3xw6HhvJs9NyXtYZvnRde0rePCvmZfpsyAZ9cTM7RDDaYtIWpARnxJzDWSkvXZp8uojTkxLmbZtiDGPLXoo6R/V9J83k7+JKegSRle1006F+L6wY9Fixgd+sZlGc8ZHFJPDt8w62WfTHuocVDolIy0=
+    app: immense-taiga-6902
+    run:
+      - "rake db:migrate"
+      - restart
