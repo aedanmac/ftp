@@ -4,8 +4,8 @@ rvm:
 branches:
   only:
     - master
-  install:
-    - travis_retry bundle install
+install:
+  - "travis_retry bundle install"
 before_script:
 - psql -c 'create database ftp_test;' -U postgres
 deploy:
