@@ -1,2 +1,2 @@
-COPY incidents FROM '/Users/christopherbedian/Desktop/ftp/ftp/db/the-counted.csv' DELIMITER ',' CSV;
+COPY incidents FROM '/Users/sama/big_hippo/projects/ftp/db/the-counted.csv' DELIMITER ',' CSV;
 
