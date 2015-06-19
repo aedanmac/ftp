@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20150619005758) do
     t.string   "cause"
     t.string   "lawenforcementagency"
     t.string   "armed"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "users", force: :cascade do |t|
