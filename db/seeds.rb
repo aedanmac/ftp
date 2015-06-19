@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+sql = File.read('db/import.sql')
+    statements = sql.split(/;$/)
+    statements.pop
+
+    ActiveRecord::Base.transaction do
+      statements.each do |statement|
+        ActiveRecord::Base.connection.execute(statement)
+      end
+    end
