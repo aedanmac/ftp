@@ -8,18 +8,14 @@
             </div>
 
             <div class="panel-body">
-                <p><%= incident.age %></p>
-                <p><%= incident.gender %></p>
-                <p><%= incident.raceethnicity %></p>
-                <p><%= incident.month %></p>
-                <p><%= incident.day %></p>
-                <p><%= incident.year %></p>
-                <p><%= incident.streetaddress %></p>
-                <p><%= incident.city %></p>
-                <p><%= incident.state %></p>
-                <p><%= incident.cause %></p>
-                <p><%= incident.lawenforcementagency %></p>
-                <p><%= incident.armed %></p>
+                <p><%= "Age: " "#{incident.age}" %></p>
+                <p><%= "Gender: " "#{incident.gender}" %></p>
+                <p><%= "Race / Ethnicity: " "#{incident.raceethnicity}" %></p>
+                <p><%= "Date: " "#{incident.month}" " " "#{incident.day}" ", " "#{incident.year}"%></p>
+                <p><%= "Location: " "#{incident.streetaddress}" ", " "#{incident.city}" ", " "#{incident.state}" %></p>
+                <p><%= "Cause: " "#{incident.cause}" %></p>
+                <p><%= "Law Enforcement Agency: " "#{incident.lawenforcementagency}" %></p>
+                <p><%= "Armed or Unarmed: " "#{incident.armed}" %></p>
             </div>
 
     <%end %>
