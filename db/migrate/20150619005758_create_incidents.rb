@@ -14,7 +14,8 @@ class CreateIncidents < ActiveRecord::Migration
       t.string :cause
       t.string :lawenforcementagency
       t.string :armed
-
+      
+      t.timestamps null: true 
     end
   end
 end

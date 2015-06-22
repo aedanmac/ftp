@@ -1,3 +1,7 @@
+<button type="button"> 
+<%= link_to "Report New Incident", new_incident_path %>
+</button>
+
 <% if @incidents.count > 0 %>
     <% @incidents.reverse.each do |incident| %>
     <div class="container" id="roll">
