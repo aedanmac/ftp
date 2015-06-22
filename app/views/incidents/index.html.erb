@@ -16,6 +16,8 @@
                 <p><%= "Cause: " "#{incident.cause}" %></p>
                 <p><%= "Law Enforcement Agency: " "#{incident.lawenforcementagency}" %></p>
                 <p><%= "Armed or Unarmed: " "#{incident.armed}" %></p>
+
+                <%= link_to "Edit Incident", edit_incident_path(id: incident.id) %>
             </div>
 
     <%end %>
