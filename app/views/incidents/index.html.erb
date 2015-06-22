@@ -1,0 +1,26 @@
+<% if @incidents.count > 0 %>
+    <% @incidents.reverse.each do |incident| %>
+    <div class="container" id="roll">
+        <div class="panel panel-default">
+            
+            <div class="panel-heading">
+                <h3><%= incident.name %></h3>
+            </div>
+
+            <div class="panel-body">
+                <p><%= incident.age %></p>
+                <p><%= incident.gender %></p>
+                <p><%= incident.raceethnicity %></p>
+                <p><%= incident.month %></p>
+                <p><%= incident.day %></p>
+                <p><%= incident.year %></p>
+                <p><%= incident.streetaddress %></p>
+                <p><%= incident.city %></p>
+                <p><%= incident.state %></p>
+                <p><%= incident.cause %></p>
+                <p><%= incident.lawenforcementagency %></p>
+                <p><%= incident.armed %></p>
+            </div>
+
+    <%end %>
+<%end %>

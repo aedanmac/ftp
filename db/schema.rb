@@ -32,14 +32,4 @@ ActiveRecord::Schema.define(version: 20150619005758) do
     t.string "armed"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
-    t.string   "name"
-  end
-
 end
