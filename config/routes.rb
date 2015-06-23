@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   delete "incidents/:id" => "incidents#destroy"
 
-
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
