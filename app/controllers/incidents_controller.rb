@@ -24,7 +24,7 @@ class IncidentsController < ApplicationController
     end
 
     def edit
-    @incident = Incident.find(params[:id])
+        @incident = Incident.find(params[:id])
     end
 
     def update
