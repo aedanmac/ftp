@@ -1,0 +1,31 @@
+<button type="button"> 
+<%= link_to "Report New Incident", new_incident_path %>
+</button>
+
+
+
+<% if @incidents.count > 0 %>
+    <% @incidents.reverse.each do |incident| %>
+    <div class="container" id="roll">
+        <div class="panel panel-default">
+            
+            <div class="panel-heading">
+                <h3><%= incident.name %></h3>
+            </div>
+
+            <div class="panel-body">
+                <p><%= "Age: " "#{incident.age}" %></p>
+                <p><%= "Gender: " "#{incident.gender}" %></p>
+                <p><%= "Race / Ethnicity: " "#{incident.raceethnicity}" %></p>
+                <p><%= "Date: " "#{incident.month}" " " "#{incident.day}" ", " "#{incident.year}"%></p>
+                <p><%= "Location: " "#{incident.streetaddress}" ", " "#{incident.city}" ", " "#{incident.state}" %></p>
+                <p><%= "Cause: " "#{incident.cause}" %></p>
+                <p><%= "Law Enforcement Agency: " "#{incident.lawenforcementagency}" %></p>
+                <p><%= "Armed or Unarmed: " "#{incident.armed}" %></p>
+
+                <%= link_to "View Incident", incident_path(id: incident.id) %>
+
+            </div>
+
+    <%end %>
+<%end %>

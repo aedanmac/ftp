@@ -1,0 +1,43 @@
+<%= form_for @incident, url: update_incident_path do |f| %>
+
+	    
+	    <%= f.label :age %>
+	    <%= f.text_field :age, class: "form-control"%>
+	   
+	    <%= f.label :gender %>
+	    <%= f.text_field :gender, class: "form-control" %>
+
+	    <%= f.label :raceethnicity %>
+	    <%= f.text_field :raceethnicity, class: "form-control" %>
+
+	    <%= f.label :month %>
+	    <%= f.text_field :month, class: "form-control" %>
+
+	    <%= f.label :day %>
+	    <%= f.text_field :day, class: "form-control" %>
+
+	    <%= f.label :year %>
+	    <%= f.text_field :year, class: "form-control" %>
+
+	    <%= f.label :streetaddress %>
+	    <%= f.text_field :streetaddress, class: "form-control" %>
+
+	    <%= f.label :city %>
+	    <%= f.text_field :city, class: "form-control" %>
+
+	    <%= f.label :state %>
+	    <%= f.text_field :state, class: "form-control" %>
+
+	    <%= f.label :cause %>
+	    <%= f.text_field :cause, class: "form-control" %>
+
+	    <%= f.label :lawenforcementagency %>
+	    <%= f.text_field :lawenforcementagency, class: "form-control" %>
+
+	    <%= f.label :armed %>
+	    <%= f.text_field :armed, class: "form-control" %>
+
+	    <%= f.submit "Update Incident" %>
+
+	    <%= link_to "Delete", incident_path, method: :delete, data: { confirm: "Are you sure you want to delete this incident?"} %>
+<% end %>

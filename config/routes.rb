@@ -3,12 +3,16 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'sessions#new', as: :new_session
+  root "incidents#index"
 
-  #Oauth session routes
-  get 'auth/:provider/callback', to: 'sessions#create'
-  get 'auth/failure', to: redirect('/')
-  get 'signout', to: 'sessions#destroy', as: 'signout'
+  get "/incidents" => "incidents#index", as: :incidents
+  get "/incidents/new" => "incidents#new", as: :new_incident
+  post "/incidents" => "incidents#create", as: :create_incident
+  get "/incidents/:id" => "incidents#show", as: :incident
+  get "incidents/:id/edit" => "incidents#edit", as: :edit_incident
+  patch "incidents/:id" => "incidents#update", as: :update_incident
+
+  delete "incidents/:id" => "incidents#destroy"
 
 
   # Example of regular route:
