@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   delete "incidents/:id" => "incidents#destroy"
 
   get "/users" => "users#index", as: :all_users
+  get "/users/:id/edit" => "users#edit", as: :edit_user
+  patch "users/:id" => "users#update", as: :update_user
+
+  delete "users/:id" => "users#destroy"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

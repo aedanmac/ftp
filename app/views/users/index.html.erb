@@ -1,11 +1,20 @@
-<% if @users.count > 0 %>
-    <% @users.each do |user| %>
-        <h4><%= user.email %><br>
-        <small><%= user.approved %></small>
-        </h4>
-        <hr>
-    <% end %>
+<% if current_user.admin == true %>
+        <% @users.reverse.each do |user| %>
+            <div class="container" id="roll">
+                <div class="panel panel-default">
+                        
+                    <div class="panel-heading">
+                        <h3><%= user.email %></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p><%= "Approval: " "#{user.approved}" %></p>
+                        <p><%= "Admin: " "#{user.admin}" %></p>  
+                    </div>
+                    <%= link_to "Edit User", edit_user_path(id: user.id) %>
+                </div>
+            </div>
+            <hr>
+        <%end %>
 <% else %>
-    <h3>No Users Exist</h3>
-    <hr>
-<% end %>
+        <%= link_to "Access Not Authorized", incidents_path %>
+<%end %>

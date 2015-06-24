@@ -1,4 +1,5 @@
 class IncidentsController < ApplicationController
+before_action :authenticate_user! 
 
 	def index
         @incidents = Incident.all
@@ -6,7 +7,6 @@ class IncidentsController < ApplicationController
 
     def new
         @incident = current_user.incidents.build
-        
     end
 
     def create
