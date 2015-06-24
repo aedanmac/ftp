@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   delete "incidents/:id" => "incidents#destroy"
 
+  get "/users" => "users#index", as: :all_users
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

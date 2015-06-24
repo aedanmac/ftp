@@ -1,0 +1,11 @@
+<% if @users.count > 0 %>
+    <% @users.each do |user| %>
+        <h4><%= user.email %><br>
+        <small><%= user.approved %></small>
+        </h4>
+        <hr>
+    <% end %>
+<% else %>
+    <h3>No Users Exist</h3>
+    <hr>
+<% end %>
