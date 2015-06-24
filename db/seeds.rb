@@ -33,4 +33,4 @@
 
     ActiveRecord::Base.connection_pool.checkin(dbconn)
 
-    
+   

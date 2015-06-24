@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :incidents, except: [:edit]
   end
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -17,6 +18,11 @@ Rails.application.routes.draw do
 
   delete "incidents/:id" => "incidents#destroy"
 
+  get "/users" => "users#index", as: :all_users
+  get "/users/:id/edit" => "users#edit", as: :edit_user
+  patch "users/:id" => "users#update", as: :update_user
+
+  delete "users/:id" => "users#destroy"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,22 @@
+<% if current_user.admin == true %>
+    <%= link_to "Home", incidents_path %>
+    <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+        <% @users.reverse.each do |user| %>
+            <div class="container" id="roll">
+                <div class="panel panel-default">
+                        
+                    <div class="panel-heading">
+                        <h3><%= user.email %></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p><%= "Approval: " "#{user.approved}" %></p>
+                        <p><%= "Admin: " "#{user.admin}" %></p>  
+                    </div>
+                    <%= link_to "Edit User", edit_user_path(id: user.id) %>
+                </div>
+            </div>
+            <hr>
+        <%end %>
+<% else %>
+        <%= link_to "Access Not Authorized", incidents_path %>
+<%end %>
