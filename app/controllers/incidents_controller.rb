@@ -5,12 +5,12 @@ class IncidentsController < ApplicationController
     end
 
     def new
-        @incident = Incident.new
+        @incident = current_user.incidents.build
         
     end
 
     def create
-        incident = Incident.new(incident_params)
+        incident = current_user.incidents.build(incident_params)
         if incident.save
             redirect_to incidents_path
         else
@@ -29,7 +29,7 @@ class IncidentsController < ApplicationController
 
     def update
         @incident = Incident.find(params[:id])
-            @incident.update_attributes
+            @incident.update_attributes(incident_params)
                 redirect_to incidents_path
     end
 
