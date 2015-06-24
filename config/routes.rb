@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   delete "incidents/:id" => "incidents#destroy"
 
+  get "/maps" => "maps#welcome", as: :maps
+
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
