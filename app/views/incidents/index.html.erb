@@ -1,16 +1,22 @@
-<%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-
 <% if current_user.admin == true %>
 
 <%= link_to "Admin Panel", all_users_path %>
 
 <% end %>
 
+<% if current_user.approved == false %>
+    <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+    <h1>Awaiting Admin Approval.</h1>
+<% end %>
+
+
 <% if current_user.admin == true || current_user.approved == true %>
 
-    <button type="button"> 
+ 
     <%= link_to "Report New Incident", new_incident_path %>
-    </button>
+    
+    <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+
 
     <% if @incidents.count > 0 %>
         <% @incidents.reverse.each do |incident| %>

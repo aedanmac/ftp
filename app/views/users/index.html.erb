@@ -1,4 +1,6 @@
 <% if current_user.admin == true %>
+    <%= link_to "Home", incidents_path %>
+    <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
         <% @users.reverse.each do |user| %>
             <div class="container" id="roll">
                 <div class="panel panel-default">
