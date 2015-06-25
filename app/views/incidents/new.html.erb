@@ -1,8 +1,10 @@
 <%= form_for @incident, url: create_incident_path do |f| %>
-
+	<fieldset>
+	<legend>Report an Incident</legend>
+	<div id="incident-form" class="large-4 columns text-center">
  	<%= f.label :age %>
 		<%= f.text_field :age, class: "form-control"%>
-	   
+	  
 		<%= f.label :gender %>
 		<%= f.text_field :gender, class: "form-control" %>
 
@@ -18,7 +20,7 @@
 		<%= f.label :year %>
 		<%= f.text_field :year, class: "form-control" %>
 
-		<%= f.label :streetaddress %>
+		<%= f.label :"Street Address" %>
 		<%= f.text_field :streetaddress, class: "form-control" %>
 
 		<%= f.label :city %>
@@ -30,12 +32,15 @@
 		<%= f.label :cause %>
 		<%= f.text_field :cause, class: "form-control" %>
 
-		<%= f.label :lawenforcementagency %>
+		<%= f.label :"Law Enforcement Agency" %>
 		<%= f.text_field :lawenforcementagency, class: "form-control" %>
 
 		<%= f.label :armed %>
 		<%= f.text_field :armed, class: "form-control" %>
-
+	</div>
+	</fieldset>
+	<div class="create-incident">
 	<%= f.submit "Create Incident" %>
+	</div>
 
 <% end %>
