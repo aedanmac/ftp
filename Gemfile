@@ -30,6 +30,8 @@ gem 'devise'
 gem 'figaro'
 
 gem 'active_model_serializers'
+#this is the gem for foundations styling framework
+gem 'foundation-rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
