@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'maps/welcome'
+
   namespace :api do
     resources :incidents, except: [:edit]
   end
@@ -8,6 +10,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root "incidents#index"
+
+  get "/maps" => "maps#welcome", as: :maps
 
   get "/incidents" => "incidents#index", as: :incidents
   get "/incidents/new" => "incidents#new", as: :new_incident
